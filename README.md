@@ -13,9 +13,9 @@ protein coding) ITS sequences (~700-900 nt). The total number of reads is 365.21
 `zcat *.gz > Test_all.fastq`
 
 ## demultiplex options
-[ONTbarcoder](https://github.com/asrivathsan/ONTbarcoder)
-[NGSpeciesID](https://github.com/ksahlin/NGSpeciesID)
-[Decona](https://github.com/Saskia-Oosterbroek/decona)
+[ONTbarcoder](https://github.com/asrivathsan/ONTbarcoder)\
+[NGSpeciesID](https://github.com/ksahlin/NGSpeciesID)\
+[Decona](https://github.com/Saskia-Oosterbroek/decona)\
 ONTbarcoder does not seem to work without a GUI, making it a less suitable for scripting. It might be an option for temporary tests on
 a standalone machine, but this solution is not scalable. ONTbarcoder worked with the provided [testdata](https://drive.google.com/drive/folders/1F-ojNW-gj2YL1vj8QXsuDxB1BAdZsw20) (DatasetA_mixed_Diptera), but gave no output with our testdata (Test_all.fastq). NGSpeciesID still needs to be tested; 
 Pierre-Étienne is working on Decona. For now, to get things going, sorting is done in bash.

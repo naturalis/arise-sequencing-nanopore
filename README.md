@@ -46,7 +46,7 @@ half (177.617) of the total number of reads. The [output](https://drive.google.c
 #fungi   78.111
 
 ## demultiplex amplicons ('specimens') within datasets (bash)
-The shell script [retrieve_reads.sh]() will count the number of reads and create a fastq file for each reverse index sequence provided in the [rv_index file](https://github.com/naturalis/arise-sequencing-nanopore/tree/main/index_files) given the accompanying dataset ([insect.fastq, marine.fastq, fungi.fastq](https://drive.google.com/drive/folders/1zYL8aNuHByU2BTK5xHu8yUuSoyxTK69E?usp=sharing)).
+The shell script [retrieve_reads.sh](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/scripts/retrieve_reads.sh) will count the number of reads and create a fastq file for each reverse index sequence provided in the [rv_index file](https://github.com/naturalis/arise-sequencing-nanopore/tree/main/index_files) given the accompanying dataset ([insect.fastq, marine.fastq, fungi.fastq](https://drive.google.com/drive/folders/1zYL8aNuHByU2BTK5xHu8yUuSoyxTK69E?usp=sharing)).
 A requirement for retrieve_reads.sh is the perl-scipt [rc.pl](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/scripts/rc.pl) (modified by ... from https://www.biostars.org/p/70319/) to enable searching for the reverse complement of the index sequence:
 
 `./retrieve_reads.sh insect_rv_index.txt insect.fastq`

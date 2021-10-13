@@ -25,7 +25,8 @@ Index and primer sequences are provided in Samplelist_metadata_nanopore. Basical
 forward index sequence and the within each dataset the amplicons ('specimens') can be distinguished based on the reverse index sequence.
 Mind that the number of reverse index sequences is limited, so the same reverse indices will occur in each of the three datasets (ie. split
 on dataset and then on amplicon). Most likely due to sequence errors, searching for the complete (including index) forward primer (length 36 nt)
-retrieves only a limited number (76.601) of reads:\
+retrieves only a limited number (76.601) of reads:
+
 `grep -c "GGTAGAAGGCTGTATAAGTGTAAAACGACGGCCAGT\|ACTGGCCGTCGTTTTACACTTATACAGCCTTCTACC" Test_all.fastq`\
 #insect  22.823\
 `grep -c "GGTAGAACCATTCTCACCTGTAAAACGACGGCCAGT\|ACTGGCCGTCGTTTTACAGGTGAGAATGGTTCTACC" Test_all.fastq`\
@@ -35,7 +36,8 @@ retrieves only a limited number (76.601) of reads:\
 
 We assume that using only the forward index decreases the chance of incomplete matches due to sequence errors. The obvious downside is that 
 the use of shorter search strings increases the chance of picking up false positives. Using only the forward indices (length 11 nt) retrieves about
-half (177.617) of the total number of reads. The [output](https://drive.google.com/drive/folders/1zYL8aNuHByU2BTK5xHu8yUuSoyxTK69E?usp=sharing) was saved for each dataset:\
+half (177.617) of the total number of reads. The [output](https://drive.google.com/drive/folders/1zYL8aNuHByU2BTK5xHu8yUuSoyxTK69E?usp=sharing) was saved for each dataset:
+
 `grep -B1 -A2 "GGCTGTATAAG\|CTTATACAGCC" Test_all.fastq | sed '/^--$/d' > insect.fastq`\
 #insect  56.351\
 `grep -B1 -A2 "CCATTCTCACC\|GGTGAGAATGG" Test_all.fastq | sed '/^--$/d' > marine.fastq`\
@@ -43,4 +45,10 @@ half (177.617) of the total number of reads. The [output](https://drive.google.c
 `grep -B1 -A2 "CCTGGAAGCCT\|AGGCTTCCAGG" Test_all.fastq | sed '/^--$/d' > fungi.fastq`\
 #fungi   78.111
 
-## demultiplex amplicons (within datasets)
+## demultiplex amplicons ('specimens') within datasets (bash)
+The shell script [retrieve_reads.sh]() will count the number of reads and create a fastq file for each reverse index sequence provided in the [rv_index file](https://github.com/naturalis/arise-sequencing-nanopore/tree/main/index_files) given the accompanying dataset ([insect.fastq, marine.fastq, fungi.fastq](https://drive.google.com/drive/folders/1zYL8aNuHByU2BTK5xHu8yUuSoyxTK69E?usp=sharing)).
+A requirement for retrieve_reads.sh is the perl-scipt [rc.pl]() to enable searching for the reverse complement of the index sequence:
+
+`./retrieve_reads.sh insect_rv_index.txt insect.fastq`
+
+The retrieved read count is shown in this [table](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/metadata/Retrieved_reads.md) 

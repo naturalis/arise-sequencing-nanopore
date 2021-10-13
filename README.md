@@ -2,13 +2,12 @@
 ## data description
 This repository documents initial attempts to demultiplex and consensus call ONT (Oxford Nanopore Technology) pilot data.
 The data are from a single Flongle run consisting of three datasets (marine 48 specimens, fungal 82 specimens and insect 61 specimens)
-and were provided as one zip folder (fastq_pass-20210927T115415Z-001.zip) containing 367 gzipped fastq files. The reason for creating
-this number of fastq.gz files seems to be a cut-off of thousand reads per file; BLAST searches on random reads of some of these
+and were provided as a folder ([fastq_pass](https://drive.google.com/drive/u/1/folders/1b-3ZsvCA9DyMpFp9QCmAJBaPFgScnIY1)) containing 367 gzipped fastq files. 
+The reason for creating this number of fastq.gz files seems to be a cut-off of thousand reads per file; BLAST searches on random reads of some of these
 gzip files showed representatives of each of the three datasets (ie. the data still have to be demultiplexed). For the marine and insect
 samples partial COI amplicons (~300 nt and ~658 nt, respectively) were used; the fungal samples consist of (variable length, non 
 protein coding) ITS sequences (~700-900 nt). The total number of reads is 365.218
 
-`unzip fastq_pass-20210927T115415Z-001.zip`\
 `cd fastq_pass`\
 `zcat *.gz > Test_all.fastq`
 

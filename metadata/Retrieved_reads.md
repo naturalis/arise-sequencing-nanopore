@@ -1,5 +1,5 @@
 | Dataset | ID | Fw index | Rv index | Retrieved reads |
-| :---         |:---         |:---         |:---         |:---         |
+|:---         |:---         |:---         |:---         |:---         |
 |Marine|RMNH.5101356|CCATTCTCACC|TTCATCGGTCTTA|3|
 |Marine|RMNH.5101358|CCATTCTCACC|CCGTTGGAGAACT|121|
 |Marine|RMNH.5101365|CCATTCTCACC|GGCGCGAGATATA|323|

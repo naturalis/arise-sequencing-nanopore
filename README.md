@@ -5,7 +5,7 @@ The data are from a single Flongle run consisting of three datasets (marine 48 s
 and were provided as one zip folder (fastq_pass-20210927T115415Z-001.zip) containing 367 gzipped fastq files. The reason for creating
 this number of fastq.gz files seems to be a cut-off of thousand reads per file; BLAST searches on random reads of some of these
 gzip files showed representatives of each of the three datasets (ie. the data still have to be demultiplexed). For the marine and insect
-samples partial COI amplicons (~300 nt and ~658 nt, respectively) were used; for the fungal samples consist of (variable length, non 
+samples partial COI amplicons (~300 nt and ~658 nt, respectively) were used; the fungal samples consist of (variable length, non 
 protein coding) ITS sequences (~700-900 nt). The total number of reads is 365.218
 
 `unzip fastq_pass-20210927T115415Z-001.zip`\
@@ -17,7 +17,8 @@ protein coding) ITS sequences (~700-900 nt). The total number of reads is 365.21
 [NGSpeciesID](https://github.com/ksahlin/NGSpeciesID)\
 [Decona](https://github.com/Saskia-Oosterbroek/decona)\
 ONTbarcoder does not seem to work without a GUI, making it a less suitable for scripting. It might be an option for temporary tests on
-a standalone machine, but this solution is not scalable. ONTbarcoder worked with the provided [testdata](https://drive.google.com/drive/folders/1F-ojNW-gj2YL1vj8QXsuDxB1BAdZsw20) (DatasetA_mixed_Diptera), but gave no output with our testdata (Test_all.fastq). NGSpeciesID still needs to be tested; 
+a standalone machine, but this solution is not scalable. ONTbarcoder worked with the provided [testdata](https://drive.google.com/drive/folders/1F-ojNW-gj2YL1vj8QXsuDxB1BAdZsw20) (DatasetA_mixed_Diptera), but gave no output with Test_all.fastq, nor with insect.fastq (see below). ONTbarcoder has been 
+optimized for COI and is less suited for length variable non coding genes. InsectNGSpeciesID still needs to be tested; 
 Pierre-Étienne is working on Decona. For now, to get things going, sorting is done in bash.
 
 ## demultipex datasets (bash)

@@ -81,7 +81,7 @@ the table above. An improved version of the stepwise approach would be a single 
 
 Due to the high error rate (which might be lowered by using an improved basecaller) demultiplexing by index/primer
 sequence probably is not the best option (though other programms, e.g. ONTbarcoder, seem to use the same approach).
-Another option might be to try to cluster the sequences a priori. This was tried using 'make OTU table' and minimum
-abundance of 3 reads (using DADA2 and Vsearch clustering methods on [Galaxy](https://galaxy.naturalis.nl/)), for 
+Another option might be to try to cluster the sequences a priori. This was tried using 'make OTU table' with minimum
+abundance set to 3 reads (using DADA2 and Vsearch clustering methods on [Galaxy](https://galaxy.naturalis.nl/)), for 
 Test_all.fastq as well as for insect.fastq, marine.fastq or fungi.fastq, to no avail.
 

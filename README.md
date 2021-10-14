@@ -52,7 +52,7 @@ A requirement of retrieve_reads.sh is the perl-scipt [rc.pl](https://github.com/
 `./retrieve_reads.sh insect_rv_index.txt insect.fastq`
 
 The retrieved read count (all datasets) is shown in this [table](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/metadata/Retrieved_reads.md).
-The fastq files for each amplicon can be found [here]().
+The fastq files for each amplicon can be found [here](https://drive.google.com/drive/folders/1zYL8aNuHByU2BTK5xHu8yUuSoyxTK69E?usp=sharing).
 
 ## summary
 Total number of reads: 365.218
@@ -70,3 +70,18 @@ Total number of reads: 365.218
 
 Mind that the theoretical number of reads per specimen is based on averages. In practice the distributions range
 from 0-1002, 0-836, 0-922 for insect, marine and fungal datasets, respectively.
+
+## remarks
+By demultiplexing in a stepwise fashion (datasets -> amplicons), only the presence of index sequences is scored,
+not the orientation of forward index in relation to reverse index. Some reads are much longer than expected, which suggests
+the presence of chimeras. After correction, the number of retrieved reads is expected to be even lower than shown in
+the table above. An improved version of the stepwise approach would be a single grep command, something like:
+
+`egrep -B1 -A2 "fw_index .* rc_rev_index | rc_fw_index .* rev_index" Test_all.fastq` 
+
+Due to the high error rate (which might be lowered by using an improved basecaller) demultiplexing by index/primer
+sequence probably is not the best option (though other programms, e.g. ONTbarcoder, seem to use the same approach).
+Another option might be to try to cluster the sequences a priori. This was tried using 'make OTU table' and minimum
+abundance of 3 reads (using DADA2 and Vsearch clustering methods on [Galaxy](https://galaxy.naturalis.nl/)), for 
+Test_all.fastq as well as for insect.fastq, marine.fastq or fungi.fastq, to no avail.
+

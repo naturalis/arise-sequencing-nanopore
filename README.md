@@ -34,7 +34,7 @@ retrieves only a limited number (76.601) of reads:
 `grep -c "GGTAGAACCTGGAAGCCTTGTAAAACGACGGCCAGT\|ACTGGCCGTCGTTTTACAAGGCTTCCAGGTTCTACC" Test_all.fastq`\
 #fungi   33.885
 
-We assume that using only the forward index decreases the chance of incomplete matches due to sequence errors. The obvious downside is that 
+We assume that using only the forward index decreases the number of incomplete matches due to sequence errors. The obvious downside is that 
 the use of shorter search strings increases the chance of picking up false positives. Using only the forward indices (length 11 nt) retrieves about
 half (177.617) of the total number of reads. The [output](https://drive.google.com/drive/folders/1zYL8aNuHByU2BTK5xHu8yUuSoyxTK69E?usp=sharing) was saved for each dataset:
 

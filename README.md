@@ -51,4 +51,19 @@ A requirement of retrieve_reads.sh is the perl-scipt [rc.pl](https://github.com/
 
 `./retrieve_reads.sh insect_rv_index.txt insect.fastq`
 
-The retrieved read count is shown in this [table](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/metadata/Retrieved_reads.md) 
+The retrieved read count (all datasets) is shown in this [table](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/metadata/Retrieved_reads.md).
+The fastq files for each amplicon can be found [here]().
+
+## summary
+Total number of reads: 365.218
+|Dataset|Specimens|Marker|Fw|Reads/   spec Fw|Fw Rv|Reads/  spec Fw Rv|Retrieved|
+|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|insect|61|COI|56.351|924|33.321|546|9,1%|
+|marine|48|COI|43.155|899|9.461|197|2,6%|
+|fungi|82|ITS|78.111|953|15.904|194|4,4%|
+
+**Fw** = retrieved reads based on only the forward index (demultiplex datasets)\
+**Reads/spec Fw** = theoretical number of reads per dataset per specimen based on forward index\
+**Fw Rv** = retrieved reads per dataset (Fw) for accompanying reverse indices (demultiplex amplicons)\
+**Reads/spec Fw Rv** = theoretical nuber of reads per dataset per specimen based on both indices\
+**Retrieved** = percentage of retrieved reads on total of reads

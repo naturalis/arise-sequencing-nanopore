@@ -71,6 +71,8 @@ Total number of reads: 365.218
 Mind that the theoretical number of reads per specimen is based on averages. In practice the distributions range
 from 0-1002, 0-836, 0-922 for insect, marine and fungal datasets, respectively.
 
+![](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/images/Nanopore_boxplot.png)
+
 ## remarks
 By demultiplexing in a stepwise fashion (datasets -> amplicons), only the presence of index sequences is scored,
 not the orientation of forward index in relation to reverse index. Some reads are much longer than expected, which suggests

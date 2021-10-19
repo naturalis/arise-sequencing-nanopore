@@ -15,7 +15,7 @@ protein coding) ITS sequences (~700-900 nt). The total number of reads is 365.21
 [ONTbarcoder](https://github.com/asrivathsan/ONTbarcoder)\
 [NGSpeciesID](https://github.com/ksahlin/NGSpeciesID)\
 [Decona](https://github.com/Saskia-Oosterbroek/decona)\
-ONTbarcoder does not seem to work without a GUI, making it a less suitable for scripting. It might be an option for temporary tests on
+ONTbarcoder does not seem to work without a GUI, making it less suitable for scripting. It might be an option for temporary tests on
 a standalone machine, but this solution is not scalable. ONTbarcoder worked with the provided [testdata](https://drive.google.com/drive/folders/1F-ojNW-gj2YL1vj8QXsuDxB1BAdZsw20) (DatasetA_mixed_Diptera), but gave no output with Test_all.fastq, nor with insect.fastq (see below). ONTbarcoder has been 
 optimized for COI and is less suited for length variable non coding genes. NGSpeciesID still needs to be tested; 
 Pierre-Étienne is working on Decona. For now, to get things going, sorting is done in bash.

@@ -6,7 +6,7 @@ and were provided as a folder ([fastq_pass](https://drive.google.com/drive/u/1/f
 The reason for creating this number of fastq.gz files seems to be a cut-off of thousand reads per file; BLAST searches on random reads of some of these
 gzip files showed representatives of each of the three datasets (ie. the data still have to be demultiplexed). For the marine and insect
 samples partial COI amplicons (~300 nt and ~658 nt, respectively) were used; the fungal samples consist of (variable length, non 
-protein coding) ITS sequences (~700-900 nt). The total number of reads is 365.218
+protein coding) ITS sequences (~700-900 nt). The total number of reads is 366.218
 
 `cd fastq_pass`\
 `zcat *.gz > Test_all.fastq`

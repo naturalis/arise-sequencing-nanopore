@@ -1,7 +1,7 @@
 # arise-sequencing-nanopore
 ## data description
 This repository documents initial attempts to demultiplex and consensus call ONT (Oxford Nanopore Technology) pilot data.
-Normally demultiplexing is done with [**Guppy**](https://community.nanoporetech.com/protocols/Guppy-protocol/v/gpb_2003_v1_revz_14dec2018/linux-guppy) (requires login to download) directly after basecalling. Because different indices were used than those from ONT, demultiplexing could not be done with Guppy.
+Normally demultiplexing is done with [Guppy](https://community.nanoporetech.com/protocols/Guppy-protocol/v/gpb_2003_v1_revz_14dec2018/linux-guppy) (requires login to download) directly after basecalling. Because different indices were used than those from ONT, demultiplexing could not be done with Guppy.
 The data are from a single Flongle run consisting of three datasets (marine 48 specimens, fungal 82 specimens and insect 61 specimens)
 and were provided as a folder ([fastq_pass](https://drive.google.com/drive/u/1/folders/1b-3ZsvCA9DyMpFp9QCmAJBaPFgScnIY1)) containing 367 gzipped fastq files. 
 The reason for creating this number of fastq.gz files seems to be a cut-off of thousand reads per file; BLAST searches on random reads of some of these

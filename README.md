@@ -55,7 +55,7 @@ The retrieved read count (all datasets) is shown in this [table](https://github.
 The fastq files for each amplicon can be found [here](https://drive.google.com/drive/folders/1zYL8aNuHByU2BTK5xHu8yUuSoyxTK69E?usp=sharing).
 
 ## summary
-Total number of reads: 365.218
+Total number of reads: 366.218
 |Dataset|Specimens|Marker|Fw|Reads/   spec Fw|Fw Rv|Reads/  spec Fw Rv|Retrieved|
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |insect|61|COI|56.351|924|15.904|261|4,4%|

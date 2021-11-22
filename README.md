@@ -18,8 +18,9 @@ protein coding) ITS sequences (~700-900 nt). The total number of reads is 366.21
 [Decona](https://github.com/Saskia-Oosterbroek/decona)\
 ONTbarcoder does not seem to work without a GUI, making it less suitable for scripting. It might be an option for temporary tests on
 a standalone machine, but this solution is not scalable. ONTbarcoder worked with the provided [testdata](https://drive.google.com/drive/folders/1F-ojNW-gj2YL1vj8QXsuDxB1BAdZsw20) (DatasetA_mixed_Diptera), but gave no output with Test_all.fastq, nor with insect.fastq (see below). ONTbarcoder has been 
-optimized for COI and is less suited for length variable non coding genes. NGSpeciesID still needs to be tested; 
-Pierre-Étienne is working on Decona. For now, to get things going, sorting is done in bash.
+optimized for COI and is less suited for length variable non coding genes. Likely because the variation within each sample was already very high for this dataset, NGSpeciesID couldn't be used for demultiplexing, but can be used for [consensus calling](#consensus-calling-with-ngspeciesid) of demultiplexed samples.
+
+Unlike ONTbarcoder NGSpeciesID seems to work only on demultiplexed data (likely because variation within each sample is already very high for this dataset). Decona is being tested by Pierre-Étienne. For now, to get things going, sorting is done in bash.
 
 ## demultipex datasets (bash)
 Index and primer sequences are provided in Samplelist_metadata_nanopore. Basically the three datasets can be distinguished by their
@@ -54,6 +55,8 @@ A requirement of retrieve_reads.sh is the perl-scipt [rc.pl](https://github.com/
 
 The retrieved read count (all datasets) is shown in this [table](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/metadata/Retrieved_reads.md).
 The fastq files for each amplicon can be found [here](https://drive.google.com/drive/folders/1zYL8aNuHByU2BTK5xHu8yUuSoyxTK69E?usp=sharing).
+
+## consensus calling with NGSpeciesID
 
 ## summary
 Total number of reads: 366.218

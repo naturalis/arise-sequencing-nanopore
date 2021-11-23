@@ -56,17 +56,18 @@ The fastq files for each amplicon can be found [here](https://drive.google.com/d
 
 ## demultiplex summary
 Total number of reads: 366.218
-|Dataset|Specimens|Marker|Fw|Reads/   spec Fw|Fw Rv|Reads/  spec Fw Rv|Retrieved|
-|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|insect|61|COI|56.351|924|15.904|261|4,3%|
-|marine|48|COI|43.155|899|9.461|197|2,6%|
-|fungi|82|ITS|78.111|953|33.321|406|9,1%|
+|Dataset|Specimens|Marker|Fw|Reads/   spec Fw|Fw Rv|Reads/  spec Fw Rv|Retrieved|Assigned|
+|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|insect|61|COI|56.351|924|15.904|261|4,3%|-|
+|marine|48|COI|43.155|899|9.461|197|2,6%|-|
+|fungi|82|ITS|78.111|953|33.321|406|9,1%|-|
 
 **Fw** = retrieved reads based on only the forward index (demultiplex datasets)\
 **Reads/spec Fw** = theoretical number of reads per dataset per specimen based on forward index\
 **Fw Rv** = retrieved reads per dataset (Fw) for accompanying reverse indices (demultiplex amplicons)\
 **Reads/spec Fw Rv** = theoretical nuber of reads per dataset per specimen based on both indices\
-**Retrieved** = percentage of retrieved reads on total of reads
+**Retrieved** = percentage of retrieved reads on total of reads\
+**Assigned** = Specimens to which at least one read was assigned
 
 Mind that the theoretical number of reads per specimen is based on averages. In practice the distributions range
 from 0-1002, 0-836, 0-922 for insect, marine and fungal datasets, respectively.

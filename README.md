@@ -2,7 +2,7 @@
 ## data description
 This repository documents initial attempts to demultiplex and consensus call ONT (Oxford Nanopore Technology) pilot data.
 Normally demultiplexing is done with [Guppy](https://community.nanoporetech.com/protocols/Guppy-protocol/v/gpb_2003_v1_revz_14dec2018/linux-guppy) (requires login to download) directly after basecalling. Because different indices were used than those from ONT, demultiplexing could not be done with Guppy.
-The data are from a single Flongle run consisting of three datasets (marine 48 specimens, fungal 82 specimens and insect 61 specimens)
+The data are from a single Flongle run consisting of three datasets (insect 61 specimens, marine 48 specimens and fungal 82 specimens)
 and were provided as a folder ([fastq_pass](https://drive.google.com/drive/u/1/folders/1b-3ZsvCA9DyMpFp9QCmAJBaPFgScnIY1)) containing 367 gzipped fastq files. 
 The reason for creating this number of fastq.gz files seems to be a cut-off of thousand reads per file; BLAST searches on random reads of some of these
 gzip files showed representatives of each of the three datasets (ie. the data still have to be demultiplexed). For the marine and insect
@@ -74,8 +74,7 @@ from 0-1002, 0-836, 0-922 for insect, marine and fungal datasets, respectively.
 ![](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/images/Nanopore_boxplot.png)
 
 ## consensus calling with NGSpeciesID
-Use [ngspid.sh](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/scripts/ngspid.sh) within a folder of \*.fastq files to run NGSpeciesID.sh with --ont (= --k 13 --w 20) and --medaka parameters.
-[Collect_fas.sh](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/scripts/collect_fas.sh) can be used subsequently to collect all output fasta files and move them to a separate folder.
+From within the folder of insect \*.fastq files (obtained with [demultiplex amplicons](## demultiplex amplicons ('specimens') within datasets (bash)) [ngspid.sh](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/scripts/ngspid.sh) was used to run NGSpeciesID.sh with --ont (= --k 13 --w 20) and --medaka parameters on each fastq file. Subsequently [Collect_fas.sh](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/scripts/collect_fas.sh) was used  to collect all output files (consensus fasta) and move them to a separate folder (out_sum).
 
 ## remarks
 By demultiplexing in a stepwise fashion (datasets -> amplicons), only the presence of index sequences is scored,

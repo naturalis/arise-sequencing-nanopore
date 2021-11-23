@@ -56,7 +56,7 @@ The fastq files for each amplicon can be found [here](https://drive.google.com/d
 
 ## consensus calling with NGSpeciesID
 Use [ngspid.sh](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/scripts/ngspid.sh) within a folder of \*.fastq files to run NGSpeciesID.sh with --ont (= --k 13 --w 20) and --medaka parameters.
-[Collect_fas.sh]() can be used subsequently to collect all output fasta files and move them to a separate folder.
+[Collect_fas.sh](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/scripts/collect_fas.sh) can be used subsequently to collect all output fasta files and move them to a separate folder.
 
 ## summary
 Total number of reads: 366.218

@@ -58,9 +58,9 @@ The fastq files for each amplicon can be found [here](https://drive.google.com/d
 Total number of reads: 366.218
 |Dataset|Specimens|Marker|Fw|Reads/   spec Fw|Fw Rv|Reads/  spec Fw Rv|Retrieved|Assigned|
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|insect|61|COI|56.351|924|15.904|261|4,3%|-|
-|marine|48|COI|43.155|899|9.461|197|2,6%|-|
-|fungi|82|ITS|78.111|953|33.321|406|9,1%|-|
+|insect|61|COI|56.351|924|15.904|261|4,3%|59|
+|marine|48|COI|43.155|899|9.461|197|2,6%|46|
+|fungi|82|ITS|78.111|953|33.321|406|9,1%|80|
 
 **Fw** = retrieved reads based on only the forward index (demultiplex datasets)\
 **Reads/spec Fw** = theoretical number of reads per dataset per specimen based on forward index\

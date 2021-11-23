@@ -21,7 +21,7 @@ a standalone machine, but this solution is not scalable. ONTbarcoder worked with
 optimized for COI and is less suited for length variable non coding genes. Likely because the variation within each sample was already very high for this dataset, NGSpeciesID couldn't be used for demultiplexing, but can be used for [consensus calling](#consensus-calling-with-ngspeciesid) of demultiplexed samples. Decona is being tested by Pierre-Étienne. For now, to get things going, demultiplexing is done in bash.
 
 ## demultipex datasets (bash)
-Index and primer sequences are provided in Samplelist_metadata_nanopore. Basically the three datasets can be distinguished by their
+Index and primer sequences are provided in [Samplelist_metadata_nanopore](https://docs.google.com/spreadsheets/d/18Ms2JC2UmoVHpKIEy736SGRIA0DBC6dy/edit?usp=sharing&ouid=109237925768461347094&rtpof=true&sd=true)(in [metadata]()). Basically the three datasets can be distinguished by their
 forward index sequence and the within each dataset the amplicons ('specimens') can be distinguished based on the reverse index sequence.
 Mind that the number of reverse index sequences is limited, so the same reverse indices will occur in each of the three datasets (ie. split
 on dataset and then on amplicon). Most likely due to sequence errors, searching for the complete (including index) forward primer (length 36 nt)

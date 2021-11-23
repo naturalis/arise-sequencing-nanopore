@@ -54,11 +54,7 @@ A requirement of retrieve_reads.sh is the perl-scipt [rc.pl](https://github.com/
 The retrieved read count (all datasets) is shown in this [table](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/metadata/Retrieved_reads.md).
 The fastq files for each amplicon can be found [here](https://drive.google.com/drive/folders/1zYL8aNuHByU2BTK5xHu8yUuSoyxTK69E?usp=sharing).
 
-## consensus calling with NGSpeciesID
-Use [ngspid.sh](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/scripts/ngspid.sh) within a folder of \*.fastq files to run NGSpeciesID.sh with --ont (= --k 13 --w 20) and --medaka parameters.
-[Collect_fas.sh](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/scripts/collect_fas.sh) can be used subsequently to collect all output fasta files and move them to a separate folder.
-
-## summary
+## demultiplex summary
 Total number of reads: 366.218
 |Dataset|Specimens|Marker|Fw|Reads/   spec Fw|Fw Rv|Reads/  spec Fw Rv|Retrieved|
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -76,6 +72,10 @@ Mind that the theoretical number of reads per specimen is based on averages. In 
 from 0-1002, 0-836, 0-922 for insect, marine and fungal datasets, respectively.
 
 ![](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/images/Nanopore_boxplot.png)
+
+## consensus calling with NGSpeciesID
+Use [ngspid.sh](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/scripts/ngspid.sh) within a folder of \*.fastq files to run NGSpeciesID.sh with --ont (= --k 13 --w 20) and --medaka parameters.
+[Collect_fas.sh](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/scripts/collect_fas.sh) can be used subsequently to collect all output fasta files and move them to a separate folder.
 
 ## remarks
 By demultiplexing in a stepwise fashion (datasets -> amplicons), only the presence of index sequences is scored,

@@ -67,7 +67,7 @@ Total number of reads: 366.218
 **Fw Rv** = retrieved reads per dataset (Fw) for accompanying reverse indices (demultiplex amplicons)\
 **Reads/spec Fw Rv** = theoretical nuber of reads per dataset per specimen based on both indices\
 **Retrieved** = percentage of retrieved reads on total of reads\
-**Assigned** = Specimens to which at least one read was assigned
+**Assigned** = Specimens to which at least one read was assigned (will be much lower after length filter and NGSpeciesID)
 
 Mind that the theoretical number of reads per specimen is based on averages. In practice the distributions range
 from 0-1002, 0-836, 0-922 for insect, marine and fungal datasets, respectively.
@@ -75,6 +75,7 @@ from 0-1002, 0-836, 0-922 for insect, marine and fungal datasets, respectively.
 ![](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/images/Nanopore_boxplot.png)
 
 ## note: Reads have not been filtered/trimmed prior to consensus calling!
+Now tested for the insect dataset; filtering by length strongly reduces the number of clusters and improves consensus calling with NGSpeciesID. The downside is that it reduces the number of assigned species; a consensus sequence is obtained for only 36 of the 61 specimens. 
 
 ## consensus calling with NGSpeciesID
 From within the folder of insect \*.fastq files (obtained with [demultiplex amplicons](https://github.com/naturalis/arise-sequencing-nanopore#demultiplex-amplicons-specimens-within-datasets-bash)) [ngspid.sh](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/scripts/ngspid.sh) was used to run NGSpeciesID.sh with --ont (= --k 13 --w 20) and --medaka parameters on each fastq file. Subsequently [collect_fas.sh](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/scripts/collect_fas.sh) was used  to collect all output files (consensus fasta) and move them to a separate folder (out_sum).

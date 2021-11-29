@@ -81,7 +81,7 @@ Now tested for the insect dataset; filtering by length strongly reduces the numb
 From within the folder of insect \*.fastq files (obtained with [demultiplex amplicons](https://github.com/naturalis/arise-sequencing-nanopore#demultiplex-amplicons-specimens-within-datasets-bash)) [ngspid.sh](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/scripts/ngspid.sh) was used to run NGSpeciesID.sh with --ont (= --k 13 --w 20) and --medaka parameters on each fastq file. Subsequently [collect_fas.sh](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/scripts/collect_fas.sh) was used  to collect all output files (consensus fasta) and move them to a separate folder (out_sum).
 
 ## substitute index to taxon for fasta filename and consensus header
-From within the /out_sum folder ([previous step](#consensus-calling-with-ngspeciesid)) run [index2header.sh]() and use [name_code_index.txt]() as positional argument (create new files for additional datasets; this one only codes for the insect dataset)\
+From within the /out_sum folder ([previous step](#consensus-calling-with-ngspeciesid)) run [index2header.sh]() and use [name_code_index.txt](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/index_files/name_code_index.txt) as positional argument (create new files for additional datasets; this one only codes for the insect dataset)\
 `./index2header.sh name_code_index.txt`
 
 ## blast search the consensus sequences

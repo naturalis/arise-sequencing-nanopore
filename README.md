@@ -18,7 +18,7 @@ protein coding) ITS sequences (~700-900 nt). The total number of reads is 366.21
 [Decona](https://github.com/Saskia-Oosterbroek/decona)\
 ONTbarcoder does not seem to work without a GUI, making it less suitable for scripting. It might be an option for temporary tests on
 a standalone machine, but this solution is not scalable. ONTbarcoder worked with the provided [testdata](https://drive.google.com/drive/folders/1F-ojNW-gj2YL1vj8QXsuDxB1BAdZsw20) (DatasetA_mixed_Diptera), but gave no output with Test_all.fastq, nor with insect.fastq (see below). ONTbarcoder has been 
-optimized for COI and is less suited for length variable non coding genes. Likely because the variation within each sample was already very high for this dataset, NGSpeciesID couldn't be used for demultiplexing, but can be used for [consensus calling](#consensus-calling-with-ngspeciesid) of demultiplexed samples. Decona is being tested by Pierre-Étienne. For now, to get things going, demultiplexing is done in bash.
+optimized for COI and is less suited for length variable non coding genes. Likely because the variation within each sample was already very high for the pilot data, NGSpeciesID couldn't be used for demultiplexing, but can be used for [consensus calling](#consensus-calling-with-ngspeciesid) of demultiplexed samples. Decona is being tested by Pierre-Étienne. For now, to get things going, demultiplexing is done in bash.
 
 ## demultipex datasets (bash)
 Index and primer sequences are provided in [Samplelist_metadata_nanopore](https://docs.google.com/spreadsheets/d/18Ms2JC2UmoVHpKIEy736SGRIA0DBC6dy/edit?usp=sharing&ouid=109237925768461347094&rtpof=true&sd=true). Basically the three datasets can be distinguished by their
@@ -74,15 +74,27 @@ from 0-1002, 0-836, 0-922 for insect, marine and fungal datasets, respectively.
 
 ![](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/images/Nanopore_boxplot.png)
 
-## note: Reads have not been filtered/trimmed prior to consensus calling!
-Now tested for the insect dataset; filtering by length strongly reduces the number of clusters and improves consensus calling with NGSpeciesID. The downside is that it reduces the number of assigned species; a consensus sequence is obtained for only 36 of the 61 specimens. 
+*For the next steps we confined to the **insect dataset** because of unequivocal amplicon length combined with Sanger sequenced [reference data]()*
+
+## trim reads prior to consensus calling
+Filtering by length strongly reduces the number of clusters and improves consensus calling with NGSpeciesID.\
+Although the fragment length should be ~658 nt, amplicon length should be ~800 nt. For ease of use reads were\
+trimmed in Galaxy with the Prinseq tool using paramters -min_len 750, -max_len 850. After trimming 42 of the 59\
+assigned reads were leftover.
+Note: retrieve_reads.sh will create a \*.fastq file for each index, regardless if reads were assigned to it.
+Remove empty fastq files prior to using Prinseq.
 
 ## consensus calling with NGSpeciesID
-From within the folder of insect \*.fastq files (obtained with [demultiplex amplicons](https://github.com/naturalis/arise-sequencing-nanopore#demultiplex-amplicons-specimens-within-datasets-bash)) [ngspid.sh](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/scripts/ngspid.sh) was used to run NGSpeciesID.sh with --ont (= --k 13 --w 20) and --medaka parameters on each fastq file. Subsequently [collect_fas.sh](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/scripts/collect_fas.sh) was used  to collect all output files (consensus fasta) and move them to a separate folder (out_sum).
+From within the folder of trimmed reads [ngspid.sh](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/scripts/ngspid.sh) was used to run NGSpeciesID.sh with --ont (= --k 13 --w 20) and --medaka parameters on each fastq file. Subsequently [collect_fas.sh](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/scripts/collect_fas.sh) was used  to collect all output files (consensus fasta) and move them to a separate folder (out_sum).
+This resulted in 38 consensus fasta files of which 2 indices both had
+
+move:
+The downside is that it reduces the number of assigned species; a consensus sequence is obtained for only 36 of the 61 specimens. 
 
 ## substitute index to taxon for fasta filename and consensus header
 From within the /out_sum folder ([previous step](#consensus-calling-with-ngspeciesid)) run [index2header.sh]() and use [name_code_index.txt](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/index_files/name_code_index.txt) as positional argument (create new files for additional datasets; this one only codes for the insect dataset)\
 `./index2header.sh name_code_index.txt`
+The consensus sequences can either be forward or reverse complement orientation and still contain the sequencing primers, which represente a [cocktail of COI primers](https://docs.google.com/document/d/1ksfuHD4NOmXkHz1ZUdbrwhz9NWqLD_w_tctlplB7dHM/edit) in case of the insect dataset. 
 
 ## blast search consensus sequences
 

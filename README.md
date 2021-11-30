@@ -84,7 +84,7 @@ From within the folder of insect \*.fastq files (obtained with [demultiplex ampl
 From within the /out_sum folder ([previous step](#consensus-calling-with-ngspeciesid)) run [index2header.sh]() and use [name_code_index.txt](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/index_files/name_code_index.txt) as positional argument (create new files for additional datasets; this one only codes for the insect dataset)\
 `./index2header.sh name_code_index.txt`
 
-## blast search the consensus sequences
+## blast search consensus sequences
 
 ## remarks
 By demultiplexing in a stepwise fashion (datasets -> amplicons), only the presence of index sequences is scored,

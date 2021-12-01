@@ -74,15 +74,15 @@ from 0-1002, 0-836, 0-922 for insect, marine and fungal datasets, respectively.
 
 ![](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/images/Nanopore_boxplot.png)
 
-*For the next steps we confined to the **insect dataset** because of unequivocal amplicon length combined with Sanger sequenced [reference data]()*
+*For the next steps we confined ourselves to the **insect dataset** because of unequivocal amplicon length combined with Sanger sequenced [reference data]()*
 
 ## trim reads prior to consensus calling
-Filtering by length strongly reduces the number of clusters and improves consensus calling with NGSpeciesID.\
-Although the fragment length should be ~658 nt, amplicon length should be ~800 nt. For ease of use reads were\
-trimmed in Galaxy with the Prinseq tool using paramters -min_len 750, -max_len 850. After trimming 42 of the 59\
-assigned reads were leftover.
-Note: retrieve_reads.sh will create a \*.fastq file for each index, regardless if reads were assigned to it.
-Remove empty fastq files prior to using Prinseq.
+Filtering by length strongly reduces the number of clusters and improves [consensus calling with NGSpeciesID](#consensus_calling_with_ngspeciesid).\
+Although the expected fragment length is ~658 nt, amplicon length should be ~800 nt (because of added index/adapter/primer length).\
+For ease of use reads were trimmed in Galaxy with the Prinseq tool using paramters -min_len 750, -max_len 850.\
+After trimming 42 of the 59 assigned reads were leftover.\
+Note: retrieve_reads.sh will create a \*.fastq file for each index, regardless if reads were assigned to it.\
+Remove empty fastq files (zero reads in [table](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/metadata/Retrieved_reads.md)) prior to using Prinseq.
 
 ## consensus calling with NGSpeciesID
 From within the folder of trimmed reads [ngspid.sh](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/scripts/ngspid.sh) was used to run NGSpeciesID.sh with --ont (= --k 13 --w 20) and --medaka parameters on each fastq file. Subsequently [collect_fas.sh](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/scripts/collect_fas.sh) was used  to collect all output files (consensus fasta) and move them to a separate folder (out_sum).

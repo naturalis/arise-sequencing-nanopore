@@ -86,10 +86,7 @@ Remove empty fastq files (zero reads in [table](https://github.com/naturalis/ari
 
 ## consensus calling with NGSpeciesID
 From within the folder of trimmed reads [ngspid.sh](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/scripts/ngspid.sh) was used to run NGSpeciesID.sh with --ont (= --k 13 --w 20) and --medaka parameters on each fastq file. Subsequently [collect_fas.sh](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/scripts/collect_fas.sh) was used  to collect all output files (consensus fasta) and move them to a separate folder (out_sum).
-This resulted in 38 consensus fasta files of which 2 indices both had
-
-move:
-The downside is that it reduces the number of assigned species; a consensus sequence is obtained for only 36 of the 61 specimens. 
+This resulted in 38 consensus fasta files with 36 unique indices (ie. two instances of consensus sets with the same index).
 
 ## substitute index to taxon for fasta filename and consensus header
 From within the /out_sum folder ([previous step](#consensus-calling-with-ngspeciesid)) run [index2header.sh]() and use [name_code_index.txt](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/index_files/name_code_index.txt) as positional argument (create new files for additional datasets; this one only codes for the insect dataset)\
@@ -97,7 +94,7 @@ From within the /out_sum folder ([previous step](#consensus-calling-with-ngspeci
 The consensus sequences can either be forward or reverse complement orientation and still contain the sequencing primers, which represente a [cocktail of COI primers](https://docs.google.com/document/d/1ksfuHD4NOmXkHz1ZUdbrwhz9NWqLD_w_tctlplB7dHM/edit) in case of the insect dataset. 
 
 ## blast search consensus sequences
-Blast searches were done against the insect.fas reference dataset using blastn in Galaxy. All sequences had 100% coverage and the average identity was 99,7%. A [summary of the blast results]() suggests something might have gone wrong with the indices in the wetlab. 
+Blast searches were done against the insect.fas reference dataset using blastn in Galaxy. All sequences had 100% coverage and the average identity was 99,7%. A [summary of the blast results](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/metadata/insect_blast.md) suggests something might have gone wrong with the indices in the wetlab. 
 
 ## remarks
 By demultiplexing in a stepwise fashion (datasets -> amplicons), only the presence of index sequences is scored,

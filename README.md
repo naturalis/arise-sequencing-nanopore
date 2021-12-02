@@ -97,6 +97,7 @@ From within the /out_sum folder ([previous step](#consensus-calling-with-ngspeci
 The consensus sequences can either be forward or reverse complement orientation and still contain the sequencing primers, which represente a [cocktail of COI primers](https://docs.google.com/document/d/1ksfuHD4NOmXkHz1ZUdbrwhz9NWqLD_w_tctlplB7dHM/edit) in case of the insect dataset. 
 
 ## blast search consensus sequences
+Blast searches were done against the insect.fas reference dataset using blastn in Galaxy. All sequences had 100% coverage and the average identity was 99,7%. A [summary of the blast results]() suggests something might have gone wrong with the indices in the wetlab. 
 
 ## remarks
 By demultiplexing in a stepwise fashion (datasets -> amplicons), only the presence of index sequences is scored,

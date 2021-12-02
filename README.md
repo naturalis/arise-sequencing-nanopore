@@ -74,7 +74,7 @@ from 0-1002, 0-836, 0-922 for insect, marine and fungal datasets, respectively.
 
 ![](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/images/Nanopore_boxplot.png)
 
-*For the next steps we confined ourselves to the **insect dataset** because of unequivocal amplicon length combined with Sanger sequenced [reference data]()*
+*For the next steps we confined ourselves to the **insect dataset** because of unequivocal amplicon length combined with Sanger sequenced [reference data](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/metadata/insect_reference.fasta.txt)*
 
 ## trim reads prior to consensus calling
 Filtering by length strongly reduces the number of clusters and improves [consensus calling with NGSpeciesID](#consensus_calling_with_ngspeciesid).\

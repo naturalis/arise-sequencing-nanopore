@@ -77,7 +77,7 @@ Mind that the theoretical number of reads per specimen is based on averages. In 
 *For the next steps we confined ourselves to the **insect dataset** because of unequivocal amplicon length combined with Sanger sequenced [reference data](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/metadata/insect_reference.fasta.txt)*
 
 ## trim reads prior to consensus calling
-Filtering by length strongly reduces the number of clusters and improves [consensus calling with NGSpeciesID](#consensus_calling_with_ngspeciesid).\
+Filtering by length strongly reduces the number of clusters and improves [consensus calling with NGSpeciesID](#consensus-calling-with-ngspeciesid).\
 Although the expected fragment length is ~658 nt, amplicon length should be ~800 nt (because of added index/adapter/primer length).\
 For ease of use reads were trimmed in Galaxy with the Prinseq tool using paramters -min_len 750, -max_len 850.\
 After trimming 42 of the 59 assigned reads were leftover.\

@@ -69,8 +69,8 @@ Total number of reads: 366.218
 **Retrieved** = percentage of retrieved reads on total of reads\
 **Assigned** = Specimens to which at least one read was assigned (will be much lower after length filter and NGSpeciesID)
 
-Mind that the theoretical number of reads per specimen is based on averages. In practice the distributions range
-from 0-1002, 0-836, 0-922 for insect, marine and fungal datasets, respectively.
+Mind that the theoretical number of reads per specimen is based on averages. In practice the distributions range from\
+0-1002, 0-836, 0-922 for insect, marine and fungal datasets, respectively.
 
 ![](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/images/Nanopore_boxplot.png)
 
@@ -89,8 +89,10 @@ From within the folder of trimmed reads [ngspid.sh](https://github.com/naturalis
 This resulted in 38 consensus fasta files with 36 unique indices (ie. two instances of consensus sets with the same index).
 
 ## substitute index to taxon for fasta filename and consensus header
-From within the /out_sum folder ([previous step](#consensus-calling-with-ngspeciesid)) run [index2header.sh](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/scripts/index2header.sh) and use [name_code_index.txt](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/index_files/name_code_index.txt) as positional argument (create new files for additional datasets; this one only codes for the insect dataset)\
+From within the /out_sum folder ([previous step](#consensus-calling-with-ngspeciesid)) run [index2header.sh](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/scripts/index2header.sh) and use [name_code_index.txt](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/index_files/name_code_index.txt) as positional argument (create new files for additional datasets; this one only codes for the insect dataset)
+
 `./index2header.sh name_code_index.txt`
+
 The consensus sequences can either be forward or reverse complement orientation and still contain the sequencing primers, which represente a [cocktail of COI primers](https://docs.google.com/document/d/1ksfuHD4NOmXkHz1ZUdbrwhz9NWqLD_w_tctlplB7dHM/edit) in case of the insect dataset. 
 
 ## blast search consensus sequences

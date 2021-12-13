@@ -98,7 +98,9 @@ The consensus sequences can either be in forward or reverse complement orientati
 The resulting [output file](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/metadata/insect_consensus.fas) has been added to the Arise [sequencing folder](https://drive.google.com/drive/u/0/folders/1b-3ZsvCA9DyMpFp9QCmAJBaPFgScnIY1).
 
 ## blast search consensus sequences
-Blast searches were done against the insect.fas reference dataset using blastn in Galaxy. All sequences had 100% coverage and the average identity was 99,7%. A [summary of the blast results](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/metadata/insect_blast.md) suggests something might have gone wrong with the indices in the wetlab. 
+Blast searches were done against the insect.fas reference dataset using blastn in Galaxy. All sequences had 100% coverage and the average identity was 99,7%. A [summary of the blast results](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/metadata/insect_blast.md) suggests something might have gone wrong with the indices in the wetlab.
+
+The output [insect_blast_results.xlsx](https://docs.google.com/spreadsheets/d/1D4YLn_QMGX3Ye125wfm73rvV5_CaN7ph/edit?usp=sharing&ouid=109237925768461347094&rtpof=true&sd=true) has been added to the Arise sequencing folder.
 
 ## remarks
 By demultiplexing in a stepwise fashion (datasets -> amplicons), only the presence of index sequences is scored,

@@ -93,7 +93,7 @@ From within the /out_sum folder ([previous step](#consensus-calling-with-ngspeci
 
 `./index2header.sh name_code_index.txt`
 
-The consensus sequences can either be in forward or reverse complement orientation and still contain the sequencing primers, which represent a [cocktail of COI primers](https://docs.google.com/document/d/1ksfuHD4NOmXkHz1ZUdbrwhz9NWqLD_w_tctlplB7dHM/edit) in case of the insect dataset. Consensus sequences were correctly oriented by mapping against a correctly oriented (determined by location of the primers) sequence from within this dataset and the primersites were trimmed off using Geneious.\
+The consensus sequences can either be in forward or reverse complement orientation and still contain the sequencing primers, which represent a [cocktail of COI primers](https://docs.google.com/document/d/1ksfuHD4NOmXkHz1ZUdbrwhz9NWqLD_w_tctlplB7dHM/edit) in case of the insect dataset. Consensus sequences were correctly oriented by mapping against a correctly oriented (determined by location of the primers) sequence from within this dataset and the primersites were trimmed off using Geneious.
 
 The resulting [output file](https://github.com/naturalis/arise-sequencing-nanopore/blob/main/metadata/insect_consensus.fas) has been added to the Arise [sequencing folder](https://drive.google.com/drive/u/0/folders/1b-3ZsvCA9DyMpFp9QCmAJBaPFgScnIY1).
 

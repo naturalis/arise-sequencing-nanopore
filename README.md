@@ -1,4 +1,10 @@
 # arise-sequencing-nanopore
+
+## update
+The procedure described below was written for single length amplicons (such as COI).\
+All steps/scripts [after](#trim-reads-prior-to-consensus-calling) demultiplex amplicons can now be done with **ont_consensus.sh**
+for both single and variable length amplicons (such as ITS). Please check the [arise-sequencing-nanopore-consensus](https://github.com/naturalis/arise-sequencing-nanopore-consensus) repository for more information.
+
 ## data description
 This repository documents initial attempts to demultiplex and consensus call ONT (Oxford Nanopore Technology) pilot data.
 Normally demultiplexing is done with [Guppy](https://community.nanoporetech.com/protocols/Guppy-protocol/v/gpb_2003_v1_revz_14dec2018/linux-guppy) (requires login to download) directly after basecalling. Because different indices were used than those from ONT, demultiplexing could not be done with Guppy.

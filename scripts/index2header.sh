@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # this script maps names to fasta-headers and filenames
 # of output files from NGSpeciesID (as obtained with ngspid.sh)

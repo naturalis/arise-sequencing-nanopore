@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # usage: ./retrieve_reads.sh $1 $2
 

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # this script will collect the fasta output files of NGSpeciesID
 # so it has to be invoked after ngspid.sh in the same location.

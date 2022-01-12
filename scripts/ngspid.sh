@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # requirement: NGSpeciesID and accompanying conda env
 # https://github.com/ksahlin/NGSpeciesID
